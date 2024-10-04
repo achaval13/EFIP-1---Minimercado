@@ -31,7 +31,7 @@ JOIN
     Producto ON Inventario.id_producto = Producto.id_producto;
         
 
-
+-- Eliminar la venta
 DELETE FROM Venta
 WHERE id_cliente = 1;
 
