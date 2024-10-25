@@ -1,5 +1,4 @@
 package Modelo;
-
 import java.sql.Date;
 import java.util.stream.Stream;
 
@@ -9,17 +8,11 @@ public class Venta {
     private Date fecha;
     private double montoTotal;
     private int id_cliente;
-    private Cliente cliente;
-    private DetalleVenta detalleVenta;
 
-    public Venta() {
-    }
-
-    public Venta(int id_cliente, int id_detalleVenta, Date fecha, Cliente cliente ) {
+    public Venta(int id_cliente, int id_detalleVenta, Date fecha) {
         this.id_cliente = id_cliente;
         this.id_detalleVenta = id_detalleVenta;
         this.fecha = fecha;
-        this.cliente = cliente;
     }
 
     public int getId() {
@@ -46,14 +39,6 @@ public class Venta {
         this.montoTotal = montoTotal;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
     public int getId_detalleVenta() {
         return id_detalleVenta;
     }
@@ -69,17 +54,4 @@ public class Venta {
     public void setId_cliente(int id_cliente) {
         this.id_cliente = id_cliente;
     }
-
-    public DetalleVenta getDetalleVenta() {
-        return detalleVenta;
-    }
-
-    public void setDetalleVenta(DetalleVenta detalleVenta) {
-        this.detalleVenta = detalleVenta;
-    }
-
-    public void setMontoTotal(Stream<Double> map) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
 }

@@ -284,15 +284,14 @@ public class Main {
             int cantidad =   Integer.parseInt(scanner.nextLine());
 
 
-            detalleVentas.add(new DetalleVenta(idGenerado, cantidad, producto.getId(), "Efectivo", producto));
+            detalleVentas.add(new DetalleVenta(idGenerado, cantidad, producto.getId(), "Efectivo"));
         }
 
         if (detalleVentas.isEmpty()) {
             System.out.println("No se puede crear una venta sin productos. Venta cancelada.\n");
             return;
         } else {
-            Venta ventas = new Venta(cliente.getId(), idGenerado, Date.valueOf(LocalDate.MAX), cliente);
-            ventas.setMontoTotal(detalleVentas.stream().map(dv -> dv.calcularTotal()));
+            Venta ventas = new Venta(cliente.getId(), idGenerado, Date.valueOf(LocalDate.MAX));
             
             ventaController.crearVenta(ventas);
         }
@@ -317,7 +316,7 @@ public class Main {
         String strFechaVencimiento = scanner.nextLine();
         Date fecVencimiento = Date.valueOf(strFechaVencimiento);
 
-        Inventario inventario = new Inventario(cantidad, Date.valueOf(LocalDate.MAX), fecVencimiento, producto);
+        Inventario inventario = new Inventario(cantidad, Date.valueOf(LocalDate.MAX), fecVencimiento);
         inventarioController.crearInventario(inventario);
         System.out.println("Inventario creado exitosamente.");
     }

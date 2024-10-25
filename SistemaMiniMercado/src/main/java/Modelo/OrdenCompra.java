@@ -1,5 +1,4 @@
 package Modelo;
-
 import java.sql.Date;
 
 public class OrdenCompra {
@@ -7,19 +6,12 @@ public class OrdenCompra {
     private Date fecha;
     private int cantidad;
     private double montoTotal;
-    private Proveedor proveedor;
-    private Producto producto;
 
-    public OrdenCompra() {
-    }
-
-    public OrdenCompra(int id, Date fecha, int cantidad, double montoTotal, Proveedor proveedor, Producto producto) {
+    public OrdenCompra(int id, Date fecha, int cantidad, double montoTotal) {
         this.id = id;
         this.fecha = fecha;
         this.cantidad = cantidad;
         this.montoTotal = montoTotal;
-        this.proveedor = proveedor;
-        this.producto = producto;
     }
 
     public int getId() {
@@ -52,25 +44,5 @@ public class OrdenCompra {
 
     public void setMontoTotal(double montoTotal) {
         this.montoTotal = montoTotal;
-    }
-
-    public Proveedor getProveedor() {
-        return proveedor;
-    }
-
-    public void setProveedor(Proveedor proveedor) {
-        this.proveedor = proveedor;
-    }
-
-    public Producto getProducto() {
-        return producto;
-    }
-
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
-    
-    public double calcularTotal() {
-        return this.cantidad * this.producto.getPrecio();
     }
 }

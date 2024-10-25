@@ -1,6 +1,7 @@
 controller\VentaController.class
 Modelo\Inventario.class
 controller\InventarioController.class
+Main$IDGenerator.class
 Modelo\DetalleVenta.class
 Modelo\Venta.class
 Modelo\Proveedor.class

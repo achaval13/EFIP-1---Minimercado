@@ -4,17 +4,15 @@ public class DetalleVenta {
     private int id_detalleVenta;
     private int cantidad;
     private int id_producto;
-    private Producto producto;
     private String formaPago;
 
     public DetalleVenta() {
     }
 
-    public DetalleVenta(int id_detalleVenta, int cantidad, int id_producto, String formaPago, Producto producto) {
+    public DetalleVenta(int id_detalleVenta, int cantidad, int id_producto, String formaPago) {
         this.id_detalleVenta = id_detalleVenta;
         this.cantidad = cantidad;
         this.id_producto = id_producto;
-        this.producto = producto;
         this.formaPago = formaPago;
     }
 

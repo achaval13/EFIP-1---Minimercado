@@ -5,9 +5,6 @@ public class Proveedor {
     private int telefono;
     private String rubro;
 
-    public Proveedor() {
-    }
-
     public Proveedor(int telefono, String rubro) {
         this.telefono = telefono;
         this.rubro = rubro;

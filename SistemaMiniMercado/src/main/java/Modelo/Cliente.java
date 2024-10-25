@@ -1,6 +1,4 @@
-
 package Modelo;
-
 
 public class Cliente {
     private int id_cliente;
@@ -10,9 +8,6 @@ public class Cliente {
     private int telefono;
     private String localidad;
     private String direccion;
-
-    public Cliente() {
-    }
 
     public Cliente(int dni, String nombre, String apellido, int telefono, String localidad, String direccion) {
         this.dni = dni;

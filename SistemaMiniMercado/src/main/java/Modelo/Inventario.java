@@ -7,16 +7,11 @@ public class Inventario {
     private int cantidad;
     private Date fechaIngreso;
     private Date fechaVencimiento;
-    private Producto producto;
 
-    public Inventario() {
-    }
-
-    public Inventario(int cantidad, Date fechaIngreso, Date fechaVencimiento, Producto producto) {
+    public Inventario(int cantidad, Date fechaIngreso, Date fechaVencimiento) {
         this.cantidad = cantidad;
         this.fechaIngreso = fechaIngreso;
         this.fechaVencimiento = fechaVencimiento;
-        this.producto = producto;
     }
 
     public int getId() {
@@ -50,13 +45,4 @@ public class Inventario {
     public void setFechaVencimiento(Date fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
     }
-
-    public Producto getProducto() {
-        return producto;
-    }
-
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
-
 }
