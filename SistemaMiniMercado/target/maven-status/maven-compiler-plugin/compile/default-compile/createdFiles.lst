@@ -1,0 +1,14 @@
+controller\VentaController.class
+Modelo\Inventario.class
+controller\InventarioController.class
+Modelo\DetalleVenta.class
+Modelo\Venta.class
+Modelo\Proveedor.class
+controller\ProveedorController.class
+controller\ClienteController.class
+Main.class
+Modelo\Cliente.class
+Modelo\OrdenCompra.class
+Modelo\Conexion.class
+Modelo\Producto.class
+controller\ProductoController.class
