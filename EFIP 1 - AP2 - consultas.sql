@@ -29,13 +29,15 @@ FROM
     Inventario
 JOIN 
     Producto ON Inventario.id_producto = Producto.id_producto;
-        
-
--- Eliminar la venta
-DELETE FROM Venta
-WHERE id_cliente = 1;
+    
+    
+SELECT * FROM producto;
+SELECT * FROM cliente;
+SELECT * FROM proveedor;
+SELECT * FROM inventario join producto on inventario.id_producto = producto.id_producto;
+SELECT * FROM venta;
+SELECT * FROM detalleventa;
 
 -- Eliminar el cliente
 DELETE FROM Cliente
 WHERE id_cliente = 1;
-

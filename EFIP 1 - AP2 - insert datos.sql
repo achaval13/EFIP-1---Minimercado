@@ -16,17 +16,17 @@ VALUES
 ('Cerveza', 'Bebidas', 120.50),
 ('Pizza Congelada', 'Alimentos Congelados', 250.00);
 
-INSERT INTO DetalleVenta (forma_pago, cantidad, id_producto) 
+INSERT INTO DetalleVenta (cantidad, id_producto, id_venta, forma_pago) 
 VALUES 
-('Efectivo', 2, 1),  -- Detergente
-('Tarjeta de Crédito', 6, 2),  -- Cerveza
-('Débito', 1, 3);  -- Pizza Congelada
+(2, 1, 1, "Efectivo"),  -- Detergente
+(6, 2, 2, "Debito"),  -- Cerveza
+(1, 3, 3, "Credito");  -- Pizza Congelada
 
-INSERT INTO Venta (fecha, monto_total, id_cliente, id_detalle_venta) 
+INSERT INTO Venta (fecha, monto_total, id_cliente) 
 VALUES 
-(NOW(), 300.00, 1, 1),
-(NOW(), 723.00, 2, 2),
-(NOW(), 250.00, 3, 3);
+(NOW(), 300.00, 1),
+(NOW(), 723.00, 2),
+(NOW(), 250.00, 3);
 
 INSERT INTO OrdenCompra (fecha, monto_total, cantidad, id_proveedor, id_producto) 
 VALUES 

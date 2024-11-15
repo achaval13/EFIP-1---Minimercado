@@ -29,18 +29,18 @@ CREATE TABLE Producto (
 
 CREATE TABLE DetalleVenta (
     id_detalle_venta INT PRIMARY KEY auto_increment,
-    forma_pago VARCHAR(255),
+    id_venta INT,
     cantidad INT,
     id_producto INT,
+    forma_pago VARCHAR(255),
     FOREIGN KEY (id_producto) REFERENCES Producto(id_producto)
 );
 
 CREATE TABLE Venta(
 	id_venta INT PRIMARY KEY auto_increment,
-    fecha DATETIME,
+    fecha VARCHAR(30),
     monto_total FLOAT,
     id_cliente INT,
-    id_detalle_venta INT,
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
     FOREIGN KEY (id_detalle_venta) REFERENCES detalleVenta(id_detalle_venta)
 );
