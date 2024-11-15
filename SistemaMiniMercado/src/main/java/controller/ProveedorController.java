@@ -1,5 +1,8 @@
 package controller;
 import Modelo.Proveedor;
+import dao.IProveedorDAO;
+import dao.proveedorDAO;
+import java.sql.Connection;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,21 +12,23 @@ La clase ProveedorController maneja la lógica de negocio relacionada con la ent
  */
 
 public class ProveedorController {
+    private IProveedorDAO proveedorDAO;
+    
+    public ProveedorController (Connection conexion) {
+        this.proveedorDAO = new proveedorDAO(conexion);
+    }
     private List<Proveedor> proveedores = new ArrayList<>();
 
     public void crearProveedor(Proveedor proveedor) {
-        proveedores.add(proveedor);
+        proveedorDAO.crearProveedor(proveedor);
     }
     
-    public void eliminarProveedor(Proveedor proveedor) {
-        proveedores.remove(proveedor);
+    public void eliminarProveedor(int id) {
+        proveedorDAO.eliminarProveedor(id);
     }
 
-    public Proveedor buscarProveedor(String rubro) {
-        return proveedores.stream()
-                .filter(p -> p.getRubro().equals(rubro))
-                .findFirst()
-                .orElse(null);
+    public Proveedor buscarProveedor(int id) {
+        return proveedorDAO.buscarProveedor(id);
     }
     
     public void modificarProveedor(int id, int nuevoTelefono, String nuevoRubro) {

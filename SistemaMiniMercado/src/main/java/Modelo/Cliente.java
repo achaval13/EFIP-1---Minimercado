@@ -9,7 +9,8 @@ public class Cliente {
     private String localidad;
     private String direccion;
 
-    public Cliente(int dni, String nombre, String apellido, int telefono, String localidad, String direccion) {
+    public Cliente(int id_cliente, int dni, String nombre, String apellido, int telefono, String localidad, String direccion) {
+        this.id_cliente = id_cliente;
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -20,6 +21,14 @@ public class Cliente {
 
     public int getId() {
         return id_cliente;
+    }
+
+    public int getId_cliente() {
+        return id_cliente;
+    }
+
+    public void setId_cliente(int id_cliente) {
+        this.id_cliente = id_cliente;
     }
 
     public void setId(int id) {

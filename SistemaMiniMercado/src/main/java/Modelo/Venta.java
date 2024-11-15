@@ -1,33 +1,29 @@
 package Modelo;
-import java.sql.Date;
-import java.util.stream.Stream;
 
 public class Venta {
     private int id_venta;
-    private int id_detalleVenta;
-    private Date fecha;
+    private String fecha;
     private double montoTotal;
     private int id_cliente;
 
-    public Venta(int id_cliente, int id_detalleVenta, Date fecha) {
+    public Venta(int id_venta, int id_cliente, String fecha) {
         this.id_cliente = id_cliente;
-        this.id_detalleVenta = id_detalleVenta;
         this.fecha = fecha;
     }
 
-    public int getId() {
+    public int getId_venta() {
         return id_venta;
     }
 
-    public void setId(int id) {
+    public void setId_venta(int id) {
         this.id_venta = id;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -37,14 +33,6 @@ public class Venta {
 
     public void setMontoTotal(double montoTotal) {
         this.montoTotal = montoTotal;
-    }
-
-    public int getId_detalleVenta() {
-        return id_detalleVenta;
-    }
-
-    public void setId_detalleVenta(int id_detalleVenta) {
-        this.id_detalleVenta = id_detalleVenta;
     }
 
     public int getId_cliente() {

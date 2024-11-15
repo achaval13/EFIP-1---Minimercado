@@ -7,17 +7,18 @@ public class Producto {
     private String tipoProducto;
     
 
-    public Producto(String nombre, double precio, String tipoProducto) {
+    public Producto(int id_producto, String nombre, double precio, String tipoProducto) {
+        this.id_producto = id_producto;
         this.nombre = nombre;
         this.precio = precio;
         this.tipoProducto = tipoProducto;
     }
 
-    public int getId() {
+    public int getId_producto() {
         return id_producto;
     }
 
-    public void setId(int id) {
+    public void setId_producto(int id) {
         this.id_producto = id;
     }
 

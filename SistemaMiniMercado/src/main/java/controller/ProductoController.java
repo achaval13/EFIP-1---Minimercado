@@ -1,5 +1,8 @@
 package controller;
 import Modelo.Producto;
+import dao.IProductoDAO;
+import dao.productoDAO;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,31 +11,26 @@ La clase ProductoController maneja la lógica de negocio relacionada con la enti
  */
 
 public class ProductoController {
-    private List<Producto> productos = new ArrayList<>();
-
-    public void crearProducto(Producto producto) {
-        productos.add(producto);
+    private IProductoDAO productoDAO;
+    
+    public ProductoController (Connection conexion) {
+        this.productoDAO = new productoDAO(conexion);
     }
     
-    public void eliminarProducto(Producto producto) {
-        productos.remove(producto);
+    public List<Producto> obtenerTodosLosProductos() {
+        return productoDAO.obtenerTodosLosProductos();
+    }
+
+    public void crearProducto(Producto producto) {
+        productoDAO.crearProducto(producto);
+    }
+    
+    public void eliminarProducto(String nombre) {
+        productoDAO.eliminarProducto(nombre);
     }
 
     public Producto buscarProducto(String nombre) {
-        return productos.stream()
-                .filter(p -> p.getNombre().equals(nombre))
-                .findFirst()
-                .orElse(null);
+        return productoDAO.buscarProducto(nombre); 
     }
 
-    public void modificarProducto(int id, String nuevoNombre, double nuevoPrecio, String nuevoTipoProducto) {
-    for (Producto producto : productos) {
-        if (producto.getId() == id) {
-            producto.setNombre(nuevoNombre);
-            producto.setPrecio(nuevoPrecio);
-            producto.setTipoProducto(nuevoTipoProducto);
-            break; // Salimos del bucle una vez que encontramos y modificamos el producto
-        }
-    }
-}
 }

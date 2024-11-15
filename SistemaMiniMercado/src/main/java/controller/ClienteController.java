@@ -1,5 +1,8 @@
 package controller;
 import Modelo.Cliente;
+import dao.IClienteDAO;
+import dao.clienteDAO;
+import java.sql.Connection;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,34 +12,28 @@ La clase ClienteController maneja la lógica de negocio relacionada con la entid
  */
 
 public class ClienteController {
-    private List<Cliente> clientes = new ArrayList<>();
-
-    public void crearCliente(Cliente cliente) {
-        clientes.add(cliente);
+    
+    private IClienteDAO clienteDAO;
+    
+    public ClienteController (Connection conexion) {
+        this.clienteDAO = new clienteDAO(conexion);
     }
     
-    public void elimiararCliente(Cliente cliente) {
-        clientes.remove(cliente);
+    public List<Cliente> obtenerTodosLosClientes() {
+        return clienteDAO.obtenerTodosLosClientes();
+    }
+
+    public void crearCliente(Cliente cliente) {
+        clienteDAO.crearCliente(cliente);
+    }
+    
+    public void elimiararCliente(String apellido) {
+        clienteDAO.eliminarCliente(apellido);
     }
 
     public Cliente buscarCliente(String apellido) {
-        return clientes.stream()
-                .filter(c -> c.getNombre().equals(apellido))
-                .findFirst()
-                .orElse(null);
+        return clienteDAO.buscarCliente(apellido);
     }
     
-    public void modificarCliente(int id, int nuevoDni, String nuevoNombre, String nuevoApellido, int nuevoTelefono, String nuevaLocalidad, String nuevaDireccion) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getId() == id) {
-                cliente.setDni(nuevoDni);
-                cliente.setNombre(nuevoNombre);
-                cliente.setApellido(nuevoApellido);
-                cliente.setTelefono(nuevoTelefono);
-                cliente.setLocalidad(nuevaLocalidad);
-                cliente.setDireccion(nuevaDireccion);
-                break; // Salimos del bucle una vez que encontramos y modificamos el cliente
-            }
-        }
-    }
+  
 }

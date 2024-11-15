@@ -5,12 +5,12 @@ public class DetalleVenta {
     private int cantidad;
     private int id_producto;
     private String formaPago;
+    private int id_venta;
 
-    public DetalleVenta() {
-    }
 
-    public DetalleVenta(int id_detalleVenta, int cantidad, int id_producto, String formaPago) {
+    public DetalleVenta(int id_detalleVenta, int id_venta, int cantidad, int id_producto, String formaPago) {
         this.id_detalleVenta = id_detalleVenta;
+        this.id_venta = id_venta;
         this.cantidad = cantidad;
         this.id_producto = id_producto;
         this.formaPago = formaPago;
@@ -47,16 +47,13 @@ public class DetalleVenta {
     public void setFormaPago(String formaPago) {
         this.formaPago = formaPago;
     }
-    
-    public double calcularTotal() {
-        // Aquí se debe buscar el producto por id_producto y obtener su precio
-        // Suponiendo que tenemos acceso a un método que obtiene el producto
-        Producto producto = obtenerProductoPorId(id_producto);
-        return this.cantidad * producto.getPrecio();
+
+    public int getId_venta() {
+        return id_venta;
     }
 
-    private Producto obtenerProductoPorId(int id_producto) {
-        // Implementar la lógica para obtener el producto por su ID
-        return new Producto("Nombre", 10.0, "Tipo"); // Ejemplo
+    public void setId_venta(int id_venta) {
+        this.id_venta = id_venta;
     }
+    
 }

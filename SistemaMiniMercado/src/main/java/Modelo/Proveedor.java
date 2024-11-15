@@ -1,7 +1,7 @@
 package Modelo;
 
 public class Proveedor {
-    private int id;
+    private int id_proveedor;
     private int telefono;
     private String rubro;
 
@@ -11,11 +11,11 @@ public class Proveedor {
     }
 
     public int getId() {
-        return id;
+        return id_proveedor;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id_proveedor = id;
     }
 
     public int getTelefono() {
